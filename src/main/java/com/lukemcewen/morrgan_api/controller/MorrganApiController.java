@@ -24,8 +24,13 @@ public class MorrganApiController {
         return songService.findAll();
     }
 
-    @GetMapping("{table}/{field}")
+    @GetMapping("{table}/title/{field}")
     public Song findByTitle(@PathVariable String table, @PathVariable String field){
         return songService.findByTitle(field);
+    }
+
+    @GetMapping("{table}/artist/{field}")
+    public List<Song> findByArtist(@PathVariable String table, @PathVariable String artist){
+        return songService.findByArtist(artist);
     }
 }

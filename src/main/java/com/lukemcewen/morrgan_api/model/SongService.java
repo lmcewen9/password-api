@@ -19,6 +19,10 @@ public class SongService {
         return songRepository.findByTitle(title);
     }
 
+    public List<Song> findByArtist(String artist){
+        return songRepository.findByArtist(artist);
+    }
+
     public Song save(Song song){
         return songRepository.save(song);
     }

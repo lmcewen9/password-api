@@ -40,8 +40,7 @@ public class Song {
 
     public Song(){}
 
-    public Song(int id, String title, String artist){
-        this.id = id;
+    public Song(String title, String artist){
         this.title = title;
         this.artist = artist;
     }
