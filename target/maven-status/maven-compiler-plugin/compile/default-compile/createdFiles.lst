@@ -1,2 +1,5 @@
 com\lukemcewen\morrgan_api\controller\MorrganApiController.class
+com\lukemcewen\morrgan_api\model\SongService.class
 com\lukemcewen\morrgan_api\MorrganApiApplication.class
+com\lukemcewen\morrgan_api\model\Song.class
+com\lukemcewen\morrgan_api\model\SongRepository.class
