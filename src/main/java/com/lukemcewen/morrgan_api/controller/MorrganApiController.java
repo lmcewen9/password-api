@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MorrganApiController {
     
-    @GetMapping
+    @GetMapping("/api")
     public String getHello(){
         return "Hello World";
     }
