@@ -19,18 +19,23 @@ public class MorrganApiController {
     @Autowired
     private SongService songService;
 
-    @GetMapping("{table}/")    
-    public List<Song> findAll(@PathVariable String table){
+    @GetMapping
+    public String random(){
+        return "Fuck you!";
+    }
+
+    @GetMapping("/song")    
+    public List<Song> findAll(){
         return songService.findAll();
     }
 
-    @GetMapping("{table}/title/{field}")
-    public Song findByTitle(@PathVariable String table, @PathVariable String field){
+    @GetMapping("/song/title/{field}")
+    public Song findByTitle(@PathVariable String field){
         return songService.findByTitle(field);
     }
 
-    @GetMapping("{table}/artist/{field}")
-    public List<Song> findByArtist(@PathVariable String table, @PathVariable String artist){
+    @GetMapping("/song/artist/{field}")
+    public List<Song> findByArtist(@PathVariable String artist){
         return songService.findByArtist(artist);
     }
 }
