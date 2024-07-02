@@ -73,7 +73,7 @@ public class MorrganApiController implements ErrorController{
         return castList(Object[].class, query.getResultList());
     }
 
-    @GetMapping("/{table}/{field}/int/{int}")
+    @GetMapping("/{table}/{field}/int/{item}")
     public List<Object[]> getIntItem(@PathVariable String table, @PathVariable String field, @PathVariable String item){
         String sql = String.format("select t from %s t where t.%s between %d and %d;", table, field, Integer.parseInt(item), Integer.parseInt(item));
         Query query = em.createNativeQuery(sql);
