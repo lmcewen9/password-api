@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Password{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String service;
     private String username;
@@ -54,8 +54,7 @@ public class Password{
 
     public Password(){}
 
-    public Password(int id, String service, String username, String email, String password){
-        this.id = id;
+    public Password(String service, String username, String email, String password){
         this.service = service;
         this.username = username;
         this.email = email;
