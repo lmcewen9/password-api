@@ -1,19 +1,19 @@
 package com.lukemcewen.PasswordApi;
 
-import java.util.List;
+//import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+//import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Bean;
 
-import com.lukemcewen.PasswordApi.repository.Password;
-import com.lukemcewen.PasswordApi.repository.PasswordRepository;
+//import com.lukemcewen.PasswordApi.repository.Password;
+//import com.lukemcewen.PasswordApi.repository.PasswordRepository;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
 public class PasswordApiApplication extends SpringBootServletInitializer{
@@ -22,7 +22,7 @@ public class PasswordApiApplication extends SpringBootServletInitializer{
 		SpringApplication.run(PasswordApiApplication.class, args);
 	}
 
-	@Autowired
+	/*@Autowired
 	PasswordRepository passwordRepository;
 
 	@Bean
@@ -38,6 +38,6 @@ public class PasswordApiApplication extends SpringBootServletInitializer{
 
 			passwordRepository.saveAll(List.of(p1, p2, p3, p4));
 		};
-	}
+	}*/
 
 }
