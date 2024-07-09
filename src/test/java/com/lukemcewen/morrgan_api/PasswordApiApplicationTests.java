@@ -1,10 +1,10 @@
-package com.lukemcewen.morrgan_api;
+package com.lukemcewen.password_api;
 
 /*import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MorrganApiApplicationTests {
+class PasswordApiApplicationTests {
 
 	@Test
 	void contextLoads() {
