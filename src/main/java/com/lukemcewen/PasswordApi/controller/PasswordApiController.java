@@ -54,7 +54,7 @@ public class PasswordApiController implements ErrorController{
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/apiv1/password/{id}")
-    public void deleteById(int id){
+    public void deleteById(@PathVariable int id){
         passwordService.deleteById(id);
     }
 
