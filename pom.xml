@@ -11,7 +11,7 @@
 	<groupId>com.lukemcewen</groupId>
 	<artifactId>password-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>PasswordApi</name>
 	<description>API controller for Password database</description>
 	<url/>
