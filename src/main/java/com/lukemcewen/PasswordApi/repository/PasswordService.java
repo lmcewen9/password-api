@@ -1,7 +1,6 @@
 package com.lukemcewen.PasswordApi.repository;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +15,8 @@ public class PasswordService {
         return passwordRepository.findAll();
     }
 
-    public Optional<Password> findById(int id){
-        return passwordRepository.findById(id);
+    public Password findPasswordById(int id){
+        return passwordRepository.findPasswordById(id);
     }
 
     public Password save(Password password){

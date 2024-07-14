@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PasswordRepository extends JpaRepository<Password, Integer>{
     
     List<Password> findByService(String service);
+
+    Password findPasswordById(int id);
 }

@@ -6,4 +6,5 @@ com\lukemcewen\PasswordApi\authentication\AuthenticationFilter.class
 com\lukemcewen\PasswordApi\repository\PasswordRepository.class
 com\lukemcewen\PasswordApi\authentication\SecurityConfig.class
 com\lukemcewen\PasswordApi\repository\Password.class
+com\lukemcewen\PasswordApi\repository\PasswordResponse.class
 com\lukemcewen\PasswordApi\authentication\ApiKeyAuthentication.class
