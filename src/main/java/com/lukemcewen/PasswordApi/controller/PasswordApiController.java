@@ -32,12 +32,12 @@ public class PasswordApiController implements ErrorController{
     @Autowired
     private PasswordService passwordService;
 
-    @GetMapping("/apiv1/password")
+    @GetMapping("/")
     public ResponseEntity<PasswordResponse> findAll(){
         return ResponseEntity.ok(new PasswordResponse(passwordService.findAll()));
     }
 
-    @GetMapping("/apiv1/password/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<PasswordResponse> findById(@PathVariable int id){
         Password password = passwordService.findPasswordById(id);
         if (password == null){
@@ -47,23 +47,23 @@ public class PasswordApiController implements ErrorController{
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/apiv1/password")
+    @PostMapping("/")
     public Password create(@RequestBody Password password){
         return passwordService.save(password);
     }
 
-    @PutMapping("/apiv1/password")
+    @PutMapping("/")
     public Password update(@RequestBody Password password){
         return passwordService.save(password);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/apiv1/password/{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable int id){
         passwordService.deleteById(id);
     }
 
-    @GetMapping("/apiv1/password/find/{service}")
+    @GetMapping("/find/{service}")
     public ResponseEntity<PasswordResponse> findByService(@PathVariable String service){
         return ResponseEntity.ok(new PasswordResponse(passwordService.findByService(service)));
     }
