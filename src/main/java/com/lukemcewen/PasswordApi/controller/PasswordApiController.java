@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lukemcewen.PasswordApi.repository.Password;
-import com.lukemcewen.PasswordApi.repository.PasswordResponse;
 import com.lukemcewen.PasswordApi.repository.PasswordService;
 
 
@@ -33,17 +31,13 @@ public class PasswordApiController implements ErrorController{
     private PasswordService passwordService;
 
     @GetMapping("/")
-    public ResponseEntity<PasswordResponse> findAll(){
-        return ResponseEntity.ok(new PasswordResponse(passwordService.findAll()));
+    public List<Password> findAll(){
+        return passwordService.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PasswordResponse> findById(@PathVariable int id){
-        Password password = passwordService.findPasswordById(id);
-        if (password == null){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(new PasswordResponse(List.of(password)));
+    public Password findById(@PathVariable int id){
+        return passwordService.findPasswordById(id);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -64,8 +58,8 @@ public class PasswordApiController implements ErrorController{
     }
 
     @GetMapping("/find/{service}")
-    public ResponseEntity<PasswordResponse> findByService(@PathVariable String service){
-        return ResponseEntity.ok(new PasswordResponse(passwordService.findByService(service)));
+    public List<Password> findByService(@PathVariable String service){
+        return passwordService.findByService(service);
     }
 
 }
