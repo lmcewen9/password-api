@@ -30,34 +30,34 @@ public class PasswordApiController implements ErrorController{
     @Autowired
     private PasswordService passwordService;
 
-    @GetMapping("/")
+    @GetMapping("/apiv1/password")
     public List<Password> findAll(){
         return passwordService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/apiv1/password/{id}")
     public Password findById(@PathVariable int id){
         return passwordService.findPasswordById(id);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping("/apiv1/password")
     public Password create(@RequestBody Password password){
         return passwordService.save(password);
     }
 
-    @PutMapping("/")
+    @PutMapping("/apiv1/passowrd")
     public Password update(@RequestBody Password password){
         return passwordService.save(password);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/apiv1/password/{id}")
     public void deleteById(@PathVariable int id){
         passwordService.deleteById(id);
     }
 
-    @GetMapping("/find/{service}")
+    @GetMapping("/apiv1/password/find/{service}")
     public List<Password> findByService(@PathVariable String service){
         return passwordService.findByService(service);
     }
